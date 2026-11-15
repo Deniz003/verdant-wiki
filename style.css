@@ -1,0 +1,379 @@
+
+/* =================================
+   ATLAS — KNOWLEDGE ARCHIVE
+   Main stylesheet
+================================= */
+
+
+/* 1. GLOBAL SETTINGS */
+
+:root {
+    --background: #f8f8f7;
+    --surface: #ffffff;
+    --text: #292d32;
+    --secondary: #78828d;
+    --accent: #315a75;
+    --border: #e3e5e7;
+    --hover: #edf2f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+
+/* 2. MAIN LAYOUT */
+
+.wiki-layout {
+    display: grid;
+    grid-template-columns: 230px minmax(400px, 780px) 235px;
+    gap: 38px;
+
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 45px 30px;
+    align-items: start;
+}
+
+
+/* 3. LEFT SIDEBAR */
+
+.sidebar {
+    position: sticky;
+    top: 35px;
+    height: calc(100vh - 70px);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.wiki-name {
+    color: var(--accent);
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+}
+
+.wiki-subtitle {
+    color: var(--secondary);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.search-container {
+    margin-top: 32px;
+    margin-bottom: 42px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 12px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+
+    font-size: 13px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.search-container input:focus {
+    border-color: var(--accent);
+}
+
+.explorer h3 {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+}
+
+.explorer nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.explorer nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 3px 7px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.explorer nav a:hover {
+    background: var(--hover);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    color: var(--secondary);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+
+/* 4. MAIN ARTICLE */
+
+.article {
+    min-width: 0;
+}
+
+.breadcrumb {
+    color: var(--secondary);
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    margin-bottom: 14px;
+}
+
+.article h1 {
+    font-size: 30px;
+    line-height: 1.3;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+.article h2 {
+    font-size: 21px;
+    margin: 30px 0 12px;
+    letter-spacing: -0.4px;
+}
+
+.article p {
+    margin-bottom: 17px;
+}
+
+.article-meta {
+    color: var(--secondary);
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin: 18px 0;
+}
+
+.article hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 25px 0;
+}
+
+
+/* 5. ARTICLE PROPERTIES */
+
+.properties {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    margin-bottom: 16px;
+}
+
+.properties summary {
+    cursor: pointer;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.property-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 12px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+}
+
+.property-row span:first-child {
+    color: var(--secondary);
+}
+
+.property-row span:last-child {
+    color: var(--accent);
+}
+
+
+/* 6. CATEGORY CARDS */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+    margin-top: 20px;
+}
+
+.category-card {
+    display: block;
+    padding: 17px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    color: var(--text);
+    text-decoration: none;
+
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.category-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.category-card span {
+    color: var(--secondary);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.category-card h3 {
+    color: var(--accent);
+    font-size: 16px;
+    margin: 7px 0;
+}
+
+.category-card p {
+    color: var(--secondary);
+    font-size: 12px;
+    margin: 0;
+}
+
+
+/* 7. RIGHT SIDEBAR */
+
+.right-sidebar {
+    position: sticky;
+    top: 35px;
+}
+
+.right-sidebar h3 {
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.graph-section {
+    margin-bottom: 42px;
+}
+
+.graph-placeholder {
+    height: 220px;
+    position: relative;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.graph-placeholder > span {
+    position: absolute;
+    bottom: 12px;
+    color: var(--secondary);
+    font-size: 10px;
+}
+
+.graph-node {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #a3b9c7;
+    position: absolute;
+}
+
+.main-node {
+    width: 17px;
+    height: 17px;
+    background: var(--accent);
+}
+
+.node-one {
+    top: 55px;
+    left: 55px;
+}
+
+.node-two {
+    top: 85px;
+    right: 48px;
+}
+
+.node-three {
+    bottom: 60px;
+    left: 105px;
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.contents a {
+    color: var(--secondary);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contents a:hover {
+    color: var(--accent);
+}
+
+
+/* 8. RESPONSIVE DESIGN */
+
+@media (max-width: 1050px) {
+    .wiki-layout {
+        grid-template-columns: 190px minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .right-sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .wiki-layout {
+        display: block;
+        padding: 22px 18px;
+    }
+
+    .sidebar {
+        position: static;
+        height: auto;
+        margin-bottom: 35px;
+    }
+
+    .sidebar-footer {
+        margin-top: 20px;
+    }
+
+    .article h1 {
+        font-size: 25px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
